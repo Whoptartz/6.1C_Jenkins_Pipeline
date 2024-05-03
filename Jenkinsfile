@@ -19,14 +19,14 @@ pipeline {
                     subject: "Build Status Email",
                     body: "Pipeline stage completed successfully!",
                     attachLog: true,
-                    attachmentPattern: 'stage_logs.txt'
+                    attachmentsPattern: 'stage_logs.txt'
                 }
                 failure{
                     mail to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
                     attachLog: true,
-                    attachmentPattern: 'stage_logs.txt'
+                    attachmentsPattern: 'stage_logs.txt'
                     }
                 }
           }
@@ -48,14 +48,14 @@ pipeline {
                     subject: "Build Status Email",
                     body: "Pipeline stage completed successfully!",
                     attachLog: true,
-                    attachmentPattern: 'stage_logs.txt'
+                    attachmentsPattern: 'stage_logs.txt'
                 }
                 failure{
                     mail to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
                     attachLog: true,
-                    attachmentPattern: 'stage_logs.txt'
+                    attachmentsPattern: 'stage_logs.txt'
                     }
                 }
           }
@@ -71,14 +71,14 @@ pipeline {
                     subject: "Build Status Email",
                     body: "Pipeline stage completed successfully!",
                     attachLog: true,
-                    attachmentPattern: 'stage_logs.txt'
+                    attachmentsPattern: 'stage_logs.txt'
                 }
                 failure{
                     mail to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
                     attachLog: true,
-                    attachmentPattern: 'stage_logs.txt'
+                    attachmentsPattern: 'stage_logs.txt'
                     }
                 }
           }
