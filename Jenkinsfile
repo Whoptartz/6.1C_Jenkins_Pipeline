@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Unit and Intgration Test') {
             steps {
-                sh 'build 2>&1 | tee stage_logs.txt'
+                sh 'mvn clean install 2>&1 | tee stage_logs.txt'
                 echo "== UNIT AND INTEGRATION TESTING =="
                 echo "Run unit tests to ensure the code functions as expected and run integration tests to ensure the different components of the application work together as expected, using a test automation tool like Appium, Cypress, or Ketalon"
             }
@@ -38,7 +38,7 @@ pipeline {
         }
         stage('Security Scan') {
             steps {
-                sh 'build 2>&1 | tee stage_logs.txt'
+                sh 'mvn clean install 2>&1 | tee stage_logs.txt'
                 echo "== SECURITY SCANNING =="
                 echo "Perform a security scan on the code using a tool, like AppScan, SonarQube, or Veracode, to identify any vulnerabilities"
             }
@@ -61,7 +61,7 @@ pipeline {
           }
         stage('Integration Tests on Staging') {
             steps {
-                sh 'build 2>&1 | tee stage_logs.txt'
+                sh 'mvn clean install 2>&1 | tee stage_logs.txt'
                 echo "== INTEGRATION TESTING ON STAGING =="
                 echo "Run integration tests on the staging environment to ensure the application functions as expected in a production-like environment"
             }
