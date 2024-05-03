@@ -21,7 +21,7 @@ pipeline {
                 failure{
                 mail to: "zozo.edge7@gmail.com",
                 subject: "Build Status Email",
-                body: "Build was unsuccessful."
+                body: "Build was unsuccessful at this stage."
                 }
             }
         }
@@ -36,11 +36,35 @@ pipeline {
                 echo "== SECURITY SCANNING =="
                 echo "Perform a security scan on the code using a tool, like AppScan, SonarQube, or Veracode, to identify any vulnerabilities"
             }
+            post{
+                success{
+                mail to: "zozo.edge7@gmail.com",
+                subject: "Build Status Email",
+                body: "Build was successful!"
+                }
+                failure{
+                mail to: "zozo.edge7@gmail.com",
+                subject: "Build Status Email",
+                body: "Build was unsuccessful at this stage."
+                }
+            }
         }
         stage('Integration Tests on Staging') {
             steps {
                 echo "== INTEGRATION TESTING ON STAGING =="
                 echo "Run integration tests on the staging environment to ensure the application functions as expected in a production-like environment"
+            }
+            post{
+                success{
+                mail to: "zozo.edge7@gmail.com",
+                subject: "Build Status Email",
+                body: "Build was successful!"
+                }
+                failure{
+                mail to: "zozo.edge7@gmail.com",
+                subject: "Build Status Email",
+                body: "Build was unsuccessful at this stage."
+                }
             }
         }
         stage('Deploy to Production') {
