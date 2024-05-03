@@ -12,6 +12,18 @@ pipeline {
                 echo "== UNIT AND INTEGRATION TESTING =="
                 echo "Run unit tests to ensure the code functions as expected and run integration tests to ensure the different components of the application work together as expected, using a test automation tool like Appium, Cypress, or Ketalon"
             }
+            post{
+                success{
+                mail to: "zozo.edge7@gmail.com",
+                subject: "Build Status Email",
+                body: "Build was successful!"
+                }
+                failure{
+                mail to: "zozo.edge7@gmail.com",
+                subject: "Build Status Email",
+                body: "Build was unsuccessful."
+                }
+            }
         }
         stage('Code Analysis') {
             steps {
@@ -36,13 +48,6 @@ pipeline {
                 echo "== DEPLOYMENT TO PRODUCTION =="
                 echo "Deploy the application to a production server"
             }
-        }
-    }
-    post{
-        success{
-            mail to: "zozo.edge7@gmail.com",
-            subject: "Build Status Email",
-            body: "Build was successful!"
         }
     }
 }
