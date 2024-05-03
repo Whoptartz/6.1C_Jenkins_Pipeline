@@ -9,7 +9,6 @@ pipeline {
         }
         stage('Unit and Intgration Test') {
             steps {
-                sh 'mvn clean install 2>&1 | tee stage_logs.txt'
                 echo "== UNIT AND INTEGRATION TESTING =="
                 echo "Run unit tests to ensure the code functions as expected and run integration tests to ensure the different components of the application work together as expected, using a test automation tool like Appium, Cypress, or Ketalon"
             }
@@ -18,15 +17,11 @@ pipeline {
                     emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage completed successfully!",
-                    attachLog: true,
-                    attachmentsPattern: 'stage_logs.txt'
                 }
                 failure{
                     emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
-                    attachLog: true,
-                    attachmentsPattern: 'stage_logs.txt'
                     }
                 }
           }
@@ -38,7 +33,6 @@ pipeline {
         }
         stage('Security Scan') {
             steps {
-                sh 'mvn clean install 2>&1 | tee stage_logs.txt'
                 echo "== SECURITY SCANNING =="
                 echo "Perform a security scan on the code using a tool, like AppScan, SonarQube, or Veracode, to identify any vulnerabilities"
             }
@@ -47,21 +41,16 @@ pipeline {
                     emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage completed successfully!",
-                    attachLog: true,
-                    attachmentsPattern: 'stage_logs.txt'
                 }
                 failure{
                     emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
-                    attachLog: true,
-                    attachmentsPattern: 'stage_logs.txt'
                     }
                 }
           }
         stage('Integration Tests on Staging') {
             steps {
-                sh 'mvn clean install 2>&1 | tee stage_logs.txt'
                 echo "== INTEGRATION TESTING ON STAGING =="
                 echo "Run integration tests on the staging environment to ensure the application functions as expected in a production-like environment"
             }
@@ -70,15 +59,11 @@ pipeline {
                     emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage completed successfully!",
-                    attachLog: true,
-                    attachmentsPattern: 'stage_logs.txt'
                 }
                 failure{
                     emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
-                    attachLog: true,
-                    attachmentsPattern: 'stage_logs.txt'
                     }
                 }
           }
