@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Unit and Integration Test') {
             steps {
+                sh 'echo "hello" > example.txt'
                 echo "== UNIT AND INTEGRATION TESTING =="
                 echo "Run unit tests to ensure the code functions as expected and run integration tests to ensure the different components of the application work together as expected, using a test automation tool like Appium, Cypress, or Ketalon"
             }
