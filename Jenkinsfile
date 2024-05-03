@@ -7,7 +7,7 @@ pipeline {
                 echo "Build the code using a build automation tool, such as Grunt, Apache Ant, or Gradle, to compile and package the code"
             }
         }
-        stage('Unit and Intgration Test') {
+        stage('Unit and Integration Test') {
             steps {
                 echo "== UNIT AND INTEGRATION TESTING =="
                 echo "Run unit tests to ensure the code functions as expected and run integration tests to ensure the different components of the application work together as expected, using a test automation tool like Appium, Cypress, or Ketalon"
@@ -16,12 +16,12 @@ pipeline {
                 success{
                 mail to: "zozo.edge7@gmail.com",
                 subject: "Build Status Email",
-                body: "Build was successful!"
+                body: "Unit and Integration Test stage was successful!"
                 }
                 failure{
                 mail to: "zozo.edge7@gmail.com",
                 subject: "Build Status Email",
-                body: "Build was unsuccessful at this stage."
+                body: "Unit and Integration Test stage has failed."
                 }
             }
         }
@@ -40,12 +40,12 @@ pipeline {
                 success{
                 mail to: "zozo.edge7@gmail.com",
                 subject: "Build Status Email",
-                body: "Build was successful!"
+                body: "Security Scan stage was successful!"
                 }
                 failure{
                 mail to: "zozo.edge7@gmail.com",
                 subject: "Build Status Email",
-                body: "Build was unsuccessful at this stage."
+                body: "Security Scan stage has failed."
                 }
             }
         }
@@ -58,12 +58,12 @@ pipeline {
                 success{
                 mail to: "zozo.edge7@gmail.com",
                 subject: "Build Status Email",
-                body: "Build was successful!"
+                body: "Integration Tests on Staging stage was successful!"
                 }
                 failure{
                 mail to: "zozo.edge7@gmail.com",
                 subject: "Build Status Email",
-                body: "Build was unsuccessful at this stage."
+                body: "Integration Tests on Staging stage has failed."
                 }
             }
         }
