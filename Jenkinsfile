@@ -22,9 +22,9 @@ pipeline {
                     emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
-                    }
                 }
-          }
+            }
+        }
         stage('Code Analysis') {
             steps {
                 echo "== CODE ANALYSIS =="
@@ -46,9 +46,9 @@ pipeline {
                     emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
-                    }
                 }
-          }
+            }
+        }
         stage('Integration Tests on Staging') {
             steps {
                 echo "== INTEGRATION TESTING ON STAGING =="
@@ -64,9 +64,9 @@ pipeline {
                     emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
-                    }
                 }
-          }
+            }
+        }
         stage('Deploy to Production') {
             steps {
                 echo "== DEPLOYMENT TO PRODUCTION =="
