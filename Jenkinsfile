@@ -15,14 +15,14 @@ pipeline {
             }
             post{
                 success{
-                    mail to: "zozo.edge7@gmail.com",
+                    emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage completed successfully!",
                     attachLog: true,
                     attachmentsPattern: 'stage_logs.txt'
                 }
                 failure{
-                    mail to: "zozo.edge7@gmail.com",
+                    emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
                     attachLog: true,
@@ -44,14 +44,14 @@ pipeline {
             }
             post{
                 success{
-                    mail to: "zozo.edge7@gmail.com",
+                    emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage completed successfully!",
                     attachLog: true,
                     attachmentsPattern: 'stage_logs.txt'
                 }
                 failure{
-                    mail to: "zozo.edge7@gmail.com",
+                    emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
                     attachLog: true,
@@ -67,14 +67,14 @@ pipeline {
             }
             post{
                 success{
-                    mail to: "zozo.edge7@gmail.com",
+                    emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage completed successfully!",
                     attachLog: true,
                     attachmentsPattern: 'stage_logs.txt'
                 }
                 failure{
-                    mail to: "zozo.edge7@gmail.com",
+                    emailext to: "zozo.edge7@gmail.com",
                     subject: "Build Status Email",
                     body: "Pipeline stage failed this stage",
                     attachLog: true,
