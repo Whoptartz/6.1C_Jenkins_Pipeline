@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Unit and Integration Test') {
             steps {
-                sh 'run_unit_integration_tests.sh > unit_integration_tests.log 2>&1'
+                sh 'run_unit_integration_tests.sh 2>&1 | tee unit_integration_tests.log'
                 echo "== UNIT AND INTEGRATION TESTING =="
                 echo "Run unit tests to ensure the code functions as expected and run integration tests to ensure the different components of the application work together as expected, using a test automation tool like Appium, Cypress, or Ketalon"
             }
